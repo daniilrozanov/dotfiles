@@ -8,7 +8,6 @@ return {
     { "nvim-telescope/telescope-smart-history.nvim" },
     { "nvim-telescope/telescope-ui-select.nvim" },
     { "nvim-tree/nvim-web-devicons" },
-    "rest-nvim/rest.nvim",
   },
   config = function()
     require "custom.telescope"

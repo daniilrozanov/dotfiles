@@ -46,27 +46,6 @@ local servers = {
   },
 }
 
-local servers_to_install = vim.tbl_filter(function(key)
-  local t = servers[key]
-  if type(t) == "table" then
-    return not t.manual_install
-  else
-    return t
-  end
-end, vim.tbl_keys(servers))
-
-require("mason").setup()
-local ensure_installed = {
-  "stylua",
-  "lua_ls",
-  "clangd",
-  "clang-format",
-  "neocmake",
-}
-
-vim.list_extend(ensure_installed, servers_to_install)
-require("mason-tool-installer").setup { ensure_installed = ensure_installed }
-
 for name, config in pairs(servers) do
   if config == true then
     config = {}
