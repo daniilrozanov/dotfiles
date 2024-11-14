@@ -1,0 +1,9 @@
+[user]
+email = dev@drozanov.info
+name = Daniil Rozanov
+
+[core]
+editor = nvim
+
+[color]
+ui = true
