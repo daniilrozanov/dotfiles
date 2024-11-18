@@ -1,0 +1,19 @@
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 11.0
+
+[font.normal]
+family = "CommitMono Nerd Font Mono"
+style = "Regular"
+
+[font.bold]
+style = "Bold"
+
+[font.italic]
+style = "Regular" # Italic
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F11"

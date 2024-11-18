@@ -21,16 +21,31 @@ stty stop undef # Disable ctrl-s to freeze terminal.
 zle_highlight=('paste:none')
 unsetopt BEEP # Unset beep
 
+# Interactive env
+# NOTE: I'd like to propogate this to fzf-tab to not dublicate defaults, but
+# if i do so, fzf starts behave strange. So for now there is two places where
+# i define its defaults - here and in fzf-tab settigs
+export FZF_DEFAULT_OPTS="\
+  --height=60%\
+  --layout=reverse\
+  --info=inline\
+  --tmux center,90%,90%\
+  --bind='ctrl-y:accept'\
+  --bind='ctrl-a:toggle-all'\
+  --bind='ctrl-u:preview-half-page-up'\
+  --bind='ctrl-d:preview-half-page-down'"
+
 
 # Plugins
 
 source $ZDOTDIR/functions.zsh
 
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting" # Syntax highlighting
-zsh_add_plugin "zsh-users/zsh-completions" # Bunch of completions for many commands
+zsh_add_plugin "zsh-users/zsh-completions" # Completions for many commands
 zsh_add_plugin "zsh-users/zsh-autosuggestions" # Interact with completions 
-zsh_add_plugin "zsh-users/zsh-history-substring-search" # Substring history search
+zsh_add_plugin "zsh-users/zsh-history-substring-search" # Substr history search
 zsh_add_plugin "Aloxaf/fzf-tab" # FZF integration
+zsh_add_plugin "Freed-Wu/fzf-tab-source" # Many predefined settings for fzf-tab
 
 
 # Colors
@@ -46,26 +61,30 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
-zstyle ':fzf-tab:*' fzf-bindings 'ctrl-j:accept'
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
+zstyle ':fzf-tab:complete:*' fzf-bindings \
+  'ctrl-y:accept' \
+  'ctrl-a:toggle-all' \
+  'ctrl-u:preview-half-page-up' \
+  'ctrl-d:preview-half-page-down'
 _comp_options+=(globdots) # Include hidden files.
 
 # Prompt
 
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' formats "%F{228} %b%f %c%u "
+zstyle ':vcs_info:*' formats " %F{228} %b%f%c%u"
 zstyle ':vcs_info:*' check-for-changes true # This might be expensive
 zstyle ':vcs_info:*' get-revision true
 zstyle ':vcs_info:*' check-for-staged-changes true
-zstyle ':vcs_info:*' patch-format '%p [%n|%c|%u]'
-zstyle ':vcs_info:*' nopatch-format '%p [%n|%c|%u]'
+# zstyle ':vcs_info:*' patch-format '%p [%n|%c|%u]'
+# zstyle ':vcs_info:*' nopatch-format '%p [%n|%c|%u]'
 # This is default
-zstyle ':vcs_info:*' stagedstr '%B%F{green}+%f%b'
-zstyle ':vcs_info:*' unstagedstr '%B%F{red}*%f%b'
+zstyle ':vcs_info:*' stagedstr ' %B%F{green}+%f%b'
+zstyle ':vcs_info:*' unstagedstr ' %B%F{red}*%f%b'
 
-# TODO: how this unstaged marker looks ugly
+# TODO: now this unstaged marker looks ugly
 # zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 # +vi-git-untracked()
 # {
@@ -85,7 +104,7 @@ precmd()
 }
 setopt prompt_subst
 
-PROMPT='%B%F{40}%~%f%b ${vcs_info_msg_0_}%F{40}%f '
+PROMPT='%B%F{40}%~%f%b${vcs_info_msg_0_} %F{40}%f '
 
 # Bindings
 
@@ -112,3 +131,16 @@ alias c='clear'
 
 # Shell integrations
 source <(fzf --zsh)
+
+
+# Start tmux
+
+function start_tmux() {
+  if type tmux &> /dev/null; then
+    if [[ -z "$TMUX" && -z $TERMINAL_CONTEXT ]]; then
+      tmux -2 new-session -A -s home
+    fi
+ fi
+}
+
+start_tmux
