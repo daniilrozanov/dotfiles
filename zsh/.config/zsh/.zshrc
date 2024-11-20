@@ -84,20 +84,6 @@ zstyle ':vcs_info:*' check-for-staged-changes true
 zstyle ':vcs_info:*' stagedstr ' %B%F{green}+%f%b'
 zstyle ':vcs_info:*' unstagedstr ' %B%F{red}*%f%b'
 
-# TODO: now this unstaged marker looks ugly
-# zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
-# +vi-git-untracked()
-# {
-#   if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
-#       git status --porcelain | grep -q '^?? ' 2> /dev/null ; then
-#       # This will show the marker if there are any untracked files in repo.
-#       # If instead you want to show the marker only if there are untracked
-#       # files in $PWD, use:
-#       #[[ -n $(git ls-files --others --exclude-standard) ]] ; then
-#       hook_com[staged]+='T'
-#   fi
-# }
-
 precmd()
 {
   vcs_info
@@ -128,6 +114,14 @@ alias vf='nvim $(fzf --preview="bat --color=always {}")'
 alias ls="ls --color"
 alias la="ls -la"
 alias c='clear'
+alias x='source $ZDOTDIR/.zshrc'
+function fkill () {
+  (date; ps -ef) |
+  fzf --bind='ctrl-r:reload(date; ps -ef)' \
+      --header=$'Press CTRL-R to reload\n\n' --header-lines=2 \
+      --preview='echo {}' --preview-window=down,3,wrap \
+      | awk '{print $2}' | sudo xargs kill -9
+}
 
 # Shell integrations
 source <(fzf --zsh)
