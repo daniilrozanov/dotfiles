@@ -90,7 +90,7 @@ precmd()
 }
 setopt prompt_subst
 
-PROMPT='%B%F{40}%~%f%b${vcs_info_msg_0_} %F{40}%f '
+PROMPT='%B%F{40}%~%f%b${vcs_info_msg_0_} ${GUIX_ENVIRONMENT:+[env] }%F{40}%f '
 
 # Bindings
 
@@ -113,7 +113,7 @@ alias v=nvim
 alias vf='nvim $(fzf --preview="bat --color=always {}")'
 alias ls="ls --color"
 alias la="ls -la"
-alias c='clear'
+alias c='clear; tmux clear-history'
 alias x='source $ZDOTDIR/.zshrc'
 function fkill () {
   (date; ps -ef) |
@@ -122,6 +122,15 @@ function fkill () {
       --preview='echo {}' --preview-window=down,3,wrap \
       | awk '{print $2}' | sudo xargs kill -9
 }
+## Unnecessary after pass -c will work
+function cpass () {
+  pass $1 | tr -d "[:space:]" | wl-copy --type text/plain
+}
+alias guile='rlwrap guile'
+alias md='mkdir'
+alias rmd='rmdir'
+alias gs='git status'
+
 
 # Shell integrations
 source <(fzf --zsh)

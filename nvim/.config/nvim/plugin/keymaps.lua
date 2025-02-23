@@ -4,6 +4,9 @@ set("n", "<leader>w", "<cmd>w<cr>", { desc = "Write buffer" })
 
 set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 
+-- execute current file. TODO: think this can be smarter
+set("n", "<leader>r", '<cmd>!"%:p"<cr>')
+
 -- ui navigation
 set("n", "<m-j>", "<c-w><c-j>")
 set("n", "<m-k>", "<c-w><c-k>")
