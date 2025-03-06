@@ -1,0 +1,78 @@
+Create Both
+Expunge Both
+SyncState *
+
+
+IMAPStore personal-remote
+Host mail.rozanov.info
+Port 993
+User personal@rozanov.info
+PassCmd "pass Email/personal@rozanov.info"
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore personal-local
+Path ~/Mail/personal/
+Inbox ~/Mail/personal/INBOX
+SubFolders Verbatim
+
+Channel personal
+Far :personal-remote:
+Near :personal-local:
+Patterns *
+
+
+IMAPStore dev-remote
+Host mail.rozanov.info
+Port 993
+User dev@rozanov.info
+PassCmd "pass Email/dev@rozanov.info"
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore dev-local
+Path ~/Mail/dev/
+Inbox ~/Mail/dev/INBOX
+SubFolders Verbatim
+
+Channel dev
+Far :dev-remote:
+Near :dev-local:
+Patterns *
+
+
+IMAPStore job-remote
+Host mail.rozanov.info
+Port 993
+User job@rozanov.info
+PassCmd "pass Email/job@rozanov.info"
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore job-local
+Path ~/Mail/job/
+Inbox ~/Mail/job/INBOX
+SubFolders Verbatim
+
+Channel job
+Far :job-remote:
+Near :job-local:
+Patterns *
+
+IMAPStore testmail-remote
+Host mail.rozanov.info
+Port 993
+User testmail@rozanov.info
+PassCmd "pass Email/testmail@rozanov.info"
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore testmail-local
+Path ~/Mail/testmail/
+Inbox ~/Mail/testmail/INBOX
+SubFolders Verbatim
+
+Channel testmail
+Far :testmail-remote:
+Near :testmail-local:
+Patterns *

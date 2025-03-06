@@ -61,7 +61,6 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
-zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 zstyle ':fzf-tab:complete:*' fzf-bindings \
   'ctrl-y:accept' \
@@ -110,7 +109,6 @@ bindkey '^e' edit-command-line
 
 # Aliases
 alias v=nvim
-alias vf='nvim $(fzf --preview="bat --color=always {}")'
 alias ls="ls --color"
 alias la="ls -la"
 alias c='clear; tmux clear-history'
@@ -124,12 +122,18 @@ function fkill () {
 }
 ## Unnecessary after pass -c will work
 function cpass () {
-  pass $1 | tr -d "[:space:]" | wl-copy --type text/plain
+  pass $1 | head -n 1 | tr -d "[:space:]" | wl-copy --type text/plain
 }
 alias guile='rlwrap guile'
-alias md='mkdir'
+alias md='mkdir -p'
 alias rmd='rmdir'
 alias gs='git status'
+alias ga='git add'
+alias gc='git commit --verbose'
+alias gpa='git remote | xargs -L1 -I R git push R'
+alias gl='git log'
+alias gsh='git show'
+alias gsw='git switch'
 
 
 # Shell integrations

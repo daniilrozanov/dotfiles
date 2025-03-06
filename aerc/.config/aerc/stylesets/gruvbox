@@ -1,0 +1,162 @@
+# should work with any terminal colorscheme, but was designed for gruvbox
+# terminal colors are preferred, but hex is used for grayscale
+*.default=true
+*.normal=true
+
+# present in 'Send this email?' dialog
+title.fg=yellow
+title.bg=#303030
+title.bold=true
+
+# used in setup and in 'From:' etc
+header.bold=true
+header.fg=purple
+
+# decorative lines
+border.fg=blue
+
+# requires attention
+*error.bold=true
+*error.fg=red
+*error.blink=true
+*warning.fg=yellow
+*warning.blink=true
+*success.fg=green
+
+# statusline
+statusline_default.fg=gray
+statusline_*.bg=#303030
+
+# message list colors
+msglist_deleted.fg=gray
+#msglist_unread.fg=#ffffff
+msglist_unread.bold=true
+msglist_default.fg=#dedede
+msglist_marked.fg=yellow
+msglist_marked.reverse=true
+#msglist_flagged.fg=white
+msglist_flagged.bg=#ff0000
+msglist_flagged.bold=true
+
+# inbox etc
+dirlist_default.fg=#dedede
+dirlist_unread.fg=white
+dirlist_unread.bold=true
+
+# highlight selected item
+*.selected.bg=black
+*.selected.fg=yellow
+*.selected.bold=true
+
+# primarily used in account setup
+selector_default.fg=gray
+selector_chooser.bold=true
+selector_focused.bg=green
+selector_focused.bold=true
+
+# command completion
+completion_default.bg=#303030
+completion_gutter.bg=#303030
+completion_pill.bg=aqua
+
+# LATER MATCHES OVERRIDE PREVIOUS ONES!
+
+#dynamic
+"msglist_default.From,~/proycon@anaproy.nl/.italic" = true
+"msglist_default.From,~proycon.fg" = #497248
+
+
+#notifications
+"msglist_default.From,~notification.bg" = gray
+"msglist_default.From,~notificatie.bg" = gray
+"msglist_default.From,~notify.bg" = gray
+"msglist_default.From,~noreply.bg" = gray
+"msglist_default.From,~no-reply.bg" = gray
+"msglist_default.From,~not-reply.bg" = gray
+"msglist_default.From,~no_reply.bg" = gray
+"msglist_default.From,~automail.bg" = gray
+"msglist_default.From,~bounce.bg" = gray
+"msglist_default.From,~newsletter.bg" = gray
+"msglist_default.From,~nieuwsbrief.bg" = gray
+"msglist_default.From,~invitations.bg" = gray
+"msglist_default.From,~mailer.bg" = gray
+"msglist_default.Subject,~was added to your account.bg" = gray
+"msglist_default.Subject,~bericht voor je.bg" = gray
+"msglist_default.Subject,~build success.bg" = gray
+"msglist_default.Subject,~build fail.bg" = gray
+
+#lists
+"msglist_default.List-Id,~\w+.bg" = #291840
+"msglist_default.Subject,~PATCH.bg" = #3d0647
+"msglist_default.From,~outgoing@sr.ht.bg" = #291840
+
+
+#notifications by domain
+"msglist_default.From,~stripe.com.bg" = gray
+"msglist_default.From,~liberapay.bg" = gray
+"msglist_default.From,~paypal.bg" = gray
+"msglist_default.From,~primera.nl.bg" = gray
+"msglist_default.From,~asnbank.bg" = gray
+"msglist_default.From,~triodos.bg" = gray
+"msglist_default.From,~ftm.nl.bg" = gray
+"msglist_default.From,~ebay.com.bg" = gray
+
+#sourcehut
+"msglist_default.X-Sourcehut-Patchset-Update,~REJECTED.bg" = #3d0647 
+"msglist_default.X-Sourcehut-Patchset-Update,~REJECTED.fg" = #ff0000
+"msglist_default.X-Sourcehut-Patchset-Update,~SUPERSEDED.bg" = #3d0647 
+"msglist_default.X-Sourcehut-Patchset-Update,~SUPERSEDED.fg" = #a55c00
+"msglist_default.X-Sourcehut-Patchset-Update,~NEEDS\_REVISION.bg" = #3d0647 
+"msglist_default.X-Sourcehut-Patchset-Update,~NEEDS\_REVISION.fg" = #ffff00
+"msglist_default.X-Sourcehut-Patchset-Update,~APPROVED.bg" = #3d0647 
+"msglist_default.X-Sourcehut-Patchset-Update,~APPROVED.fg" = green
+"msglist_default.X-Sourcehut-Patchset-Update,~APPLIED.bg" = #3d0647
+"msglist_default.X-Sourcehut-Patchset-Update,~APPLIED.fg" = #00ff00
+
+#spam
+"msglist_default.X-Spam,~Yes.fg" = #000000
+
+#personal
+"msglist_default.From,~(anaxotic|gompel|wijck).bg" = #343205
+
+#work
+"msglist_default.From,~knaw.bg" = #052134
+"msglist_default.From,~@ru.nl.bg" = #0c0534
+"msglist_default.From,~@cls.ru.nl.bg" = #0c0534
+"msglist_default.From,~@science.ru.nl.bg" = #0c0534
+"msglist_default.From,~@let.ru.nl.bg" = #0c0534
+"msglist_default.To,~admin@cls.ru.nl.bg" = #0c0534
+
+#hobby
+"msglist_default.From,~unilang.bg" = #342305
+"msglist_default.To,~unilang.bg" = #342305
+
+#newletters
+"msglist_default.Subject,~nieuwsbrief.bg" = gray
+"msglist_default.Subject,~Nieuwsbrief.bg" = gray
+"msglist_default.Subject,~newsletter.bg" = gray
+
+#action
+msglist_answered.fg = #57cf53
+
+
+[viewer]
+header.fg=#d845c5
+header.bold=true    
+signature.fg=3   
+signature.dim=true    
+diff_meta.fg=#45d0d8
+diff_meta.bold=true    
+diff_chunk.dim=true    
+diff_chunk_func.fg=#45d0d8
+diff_chunk_func.bold=true    
+diff_add.fg=#00ff00    
+diff_del.fg=#ff6060
+quote_1.fg=6    
+quote_2.fg=7
+quote_3.fg=6    
+quote_4.fg=7    
+quote_3.dim=true
+quote_4.dim=true
+quote_x.fg=gray
+quote_x.dim=true

@@ -1,0 +1,13 @@
+[database]
+path=/home/chell/Mail
+[user]
+name=Daniil Rozanov
+[new]
+tags=inbox;unread
+ignore=.mbsyncstate;.uidvalidity
+[search]
+exclude_tags=deleted;spam;
+[maildir]
+synchronize_flags=true
+[crypto]
+gpg_path=gpg

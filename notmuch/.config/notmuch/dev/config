@@ -1,0 +1,17 @@
+# vim: filetype=dosini
+
+[database]
+path=/home/chell/Mail/dev
+[user]
+name=Daniil Rozanov
+primary_email=dev@rozanov.info
+[new]
+tags=inbox;unread
+ignore=.mbsyncstate;.uidvalidity
+[search]
+exclude_tags=deleted;spam;
+[maildir]
+synchronize_flags=true
+[crypto]
+gpg_path=gpg
+

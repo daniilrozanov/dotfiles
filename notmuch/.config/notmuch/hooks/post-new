@@ -1,0 +1,22 @@
+#!/bin/sh
+
+notmuch tag +info-gnu -- cc:info-gnu@gnu.org or to:info-gnu@gnu.org
+notmuch tag +info-guix -- cc:info-guix@gnu.org or to:info-guix@gnu.org
+notmuch tag +sg7 -- cc:sg7@lists.isocpp.org or to:sg7@lists.isocpp.org
+notmuch tag +sg13 -- cc:sg13@lists.isocpp.org or to:sg13@lists.isocpp.org
+notmuch tag +sg14 -- cc:sg14@lists.isocpp.org or to:sg14@lists.isocpp.org
+notmuch tag +sg15 -- cc:sg15@lists.isocpp.org or to:sg15@lists.isocpp.org
+notmuch tag +sg16 -- cc:sg16@lists.isocpp.org or to:sg16@lists.isocpp.org
+notmuch tag +std-discussion -- cc:std-discussion@lists.isocpp.org or to:std-discussion@lists.isocpp.org
+notmuch tag +std-proposals -- cc:std-proposals@lists.isocpp.org or to:std-proposals@lists.isocpp.org
+notmuch tag +notmuch -- cc:notmuch@notmuchmail.org or to:notmuch@notmuchmail.org
+notmuch tag +rjarry-aerc-discuss -- cc:~rjarry/aerc-discuss@lists.sr.ht or to:~rjarry/aerc-discuss@lists.sr.ht
+
+# Some interesting trashing/trashed, Xing/Xed in general was mentioned
+
+notmuch tag -inbox -unread +trash -- folder:Trash
+notmuch tag -inbox -unread +spam -- folder:Spam
+notmuch tag -inbox -unread -draft +sent -- folder:Sent
+notmuch tag -inbox -unread +draft -- folder:Draft
+
+notmuch tag +inbox -- folder:INBOX
