@@ -1,9 +1,20 @@
-[user]
-email = dev@drozanov.info
-name = Daniil Rozanov
-
 [core]
 editor = nvim
 
-[color]
-ui = true
+[color "diff"]
+whitespace = red reverse
+
+[user]
+email = dev@rozanov.info
+name = Daniil Rozanov
+signingkey = dev@rozanov.info
+
+[commit]
+gpgsign = true
+
+[tag]
+gpgSign = true
+[http]
+sslCAinfo = /etc/ssl/certs/ca-certificates.crt
+[init]
+defaultBranch = main
