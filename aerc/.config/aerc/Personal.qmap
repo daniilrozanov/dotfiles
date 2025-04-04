@@ -1,5 +1,12 @@
+_INBOX = tag:inbox and not tag:maillist and not tag:trash and not tag:sent and not tag:spam and not tag:draft
+_Trash = tag:trash
+_Sent = tag:sent
+_Spam = tag:spam
+_Drafts = tag:draft
+
 info-gnu = tag:info-gnu
 info-guix = tag:info-guix
+help-guix = tag:help-guix
 sg7 = tag:sg7
 sg13 = tag:sg13
 sg14 = tag:sg14
@@ -9,3 +16,7 @@ std-discussion = tag:std-discussion
 std-proposals = tag:std-proposals
 notmuch = tag:notmuch
 rjarry-aerc-discuss = tag:rjarry-aerc-discuss
+pgsql-general = tag:pgsql-general
+boost = tag:boost
+boost-users = tag:boost-users
+zsh-users = tag:zsh-users

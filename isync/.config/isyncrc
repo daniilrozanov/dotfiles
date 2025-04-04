@@ -76,3 +76,22 @@ Channel testmail
 Far :testmail-remote:
 Near :testmail-local:
 Patterns *
+
+
+IMAPStore account-remote
+Host mail.rozanov.info
+Port 993
+User account@rozanov.info
+PassCmd "pass Email/account@rozanov.info"
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore account-local
+Path ~/Mail/account/
+Inbox ~/Mail/account/INBOX
+SubFolders Verbatim
+
+Channel account
+Far :account-remote:
+Near :account-local:
+Patterns *

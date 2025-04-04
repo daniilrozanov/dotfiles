@@ -4,6 +4,7 @@ https://lukesmith.xyz/index.xml blog
 
 ---C++_organizations---
 https://cppcon.org/rss c++
+https://cppnow.org/feed c++
 https://isocpp.org/blog/rss/category/news c++ news
 https://isocpp.org/blog/rss/category/product-news c++ news
 https://isocpp.org/blog/rss/category/articles-books c++
@@ -18,7 +19,19 @@ https://guix.gnu.org/feeds/blog.atom
 ---Projects---
 https://neovim.io/news.xml
 
+---Social---
+https://rabkor.ru/feed
+https://rabkor.ru/author/boris_kagarlitsky/feed
+https://rabkor.ru/author/alex-sakhnin/feed
+https://moskvichmag.ru/author/sahnin/feed
+
 ---YouTube---
 https://www.youtube.com/feeds/videos.xml?channel_id=UCvmBEbr9NZt7UEh9doI7n_A
+https://www.youtube.com/feeds/videos.xml?channel_id=UC5e__RG9K3cHrPotPABnrwg
+https://www.youtube.com/feeds/videos.xml?channel_id=UCMlGfpWw-RUdWX_JbLCukXg
 
+---Reddit---
+https://www.reddit.com/r/neovim/.rss
 
+---Torrents---
+https://rutracker.org/forum/viewforum.php?f=7

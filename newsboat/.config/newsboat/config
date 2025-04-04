@@ -1,7 +1,8 @@
 #show-read-feeds no
 auto-reload no
 
-browser "open %u >/dev/null 2>&1"
+browser firefox
+pager "less -R"
 external-url-viewer "urlscan -dc -r 'linkhandler {}'"
 
 bind-key j down
@@ -30,7 +31,6 @@ color listfocus_unread yellow default bold
 color info red black bold
 color article white default bold
 
-browser linkhandler
 macro , open-in-browser
 macro t set browser "qndl" ; open-in-browser ; set browser linkhandler
 macro a set browser "tsp yt-dlp --embed-metadata -xic -f bestaudio/best --restrict-filenames" ; open-in-browser ; set browser linkhandler

@@ -1,0 +1,21 @@
+keybind = page_up=scroll_page_up
+keybind = page_down=scroll_page_down
+
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+j=goto_split:down
+keybind = ctrl+shift+k=goto_split:up
+keybind = ctrl+shift+l=goto_split:right
+keybind = ctrl+shift+p=previous_tab
+keybind = ctrl+shift+n=next_tab
+
+keybind = ctrl+shift+alt+h=resize_split:left,15
+keybind = ctrl+shift+alt+j=resize_split:down,15
+keybind = ctrl+shift+alt+k=resize_split:up,15
+keybind = ctrl+shift+alt+l=resize_split:right,15
+keybind = ctrl+shift+alt+e=equalize_splits
+
+keybind = f11=toggle_fullscreen
+keybind = ctrl+shift+q=close_window
+keybind = ctrl+shift+d=close_tab
+
+font-size = 11.5

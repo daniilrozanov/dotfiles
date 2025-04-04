@@ -138,16 +138,3 @@ alias gsw='git switch'
 
 # Shell integrations
 source <(fzf --zsh)
-
-
-# Start tmux
-
-function start_tmux() {
-  if type tmux &> /dev/null; then
-    if [[ -z "$TMUX" && -z $TERMINAL_CONTEXT ]]; then
-      tmux -2 new-session -A -s home
-    fi
- fi
-}
-
-start_tmux

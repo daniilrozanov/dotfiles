@@ -1,6 +1,12 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+require("keymaps")
+require("autocmds")
+require("options")
+require("terminal")
+require("lsp")
+
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then
   vim.fn.system {
@@ -17,8 +23,8 @@ end
 ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
--- Set up lazy, and load my `lua/custom/plugins/` folder
-require("lazy").setup({ import = "custom/plugins" }, {
+-- Set up lazy, and load my `lua/plugins/` folder
+require("lazy").setup({ import = "plugins" }, {
   change_detection = {
     notify = false,
   },
