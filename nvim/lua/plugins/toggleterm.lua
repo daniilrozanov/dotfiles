@@ -16,19 +16,6 @@ end
 local on_close = function(_)
   vim.cmd "startinsert!"
 end
-if vim.fn.executable "lazygit" then
-  local lazygit = Terminal:new {
-    cmd = "lazygit",
-    dir = "git_dir",
-    direction = "float",
-    on_open = on_open,
-    on_close = on_close,
-    count = 999,
-  }
-  vim.keymap.set("n", "<leader>gg", function()
-    lazygit:toggle()
-  end, { desc = "ToggleTerm LazyGit" })
-end
 
 vim.keymap.set("n", "<leader>tf", function()
   Terminal:new({ count = vim.v.count1, on_open = on_open, on_close = on_close }):toggle(nil, "float")

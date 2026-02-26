@@ -58,3 +58,5 @@ gitsigns.setup {
   },
   on_attach = on_attach,
 }
+
+vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
