@@ -8,10 +8,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
-require("conform").setup{
-    formatters_by_ft = {
-      lua = { "stylua" },
-      cpp = { "clang-format" },
-      c = { "clang-format" },
-    },
+require("conform").setup {
+  formatters_by_ft = {
+    lua = { "stylua" },
+    cpp = { "clang-format" },
+    c = { "clang-format" },
+    nix = { "nixfmt" },
+  },
 }
