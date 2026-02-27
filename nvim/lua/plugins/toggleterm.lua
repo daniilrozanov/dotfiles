@@ -17,7 +17,7 @@ local on_close = function(_)
   vim.cmd "startinsert!"
 end
 
-vim.keymap.set("n", "<leader>tf", function()
+vim.keymap.set("n", "<leader>tt", function()
   Terminal:new({ count = vim.v.count1, on_open = on_open, on_close = on_close }):toggle(nil, "float")
 end)
 vim.keymap.set("n", "<leader>tv", function()

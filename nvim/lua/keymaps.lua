@@ -1,6 +1,5 @@
 local set = vim.keymap.set
 
-
 set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 
 -- ui navigation
@@ -38,3 +37,5 @@ local toggle = function(obj)
 end
 set("n", "<leader>uh", toggle(vim.lsp.inlay_hint), { desc = "Toggle inlay hints" })
 set("n", "<leader>ud", toggle(vim.diagnostic), { desc = "Toggle inlay hints" })
+
+set("t", "<C-n>", [[<C-\><C-n>]], { silent = true })
