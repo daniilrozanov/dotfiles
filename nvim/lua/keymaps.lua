@@ -27,8 +27,8 @@ end, { expr = true })
 
 --lsp
 set("n", "grt", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
-set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
-set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
+set("n", "gd", vim.lsp.buf.definition)
+set("n", "gD", vim.lsp.buf.declaration)
 --ui
 local toggle = function(obj)
   return function()
